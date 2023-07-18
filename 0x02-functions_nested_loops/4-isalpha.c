@@ -1,16 +1,16 @@
-#include <stdio.h>
-int _isalpha(int c) {
-    return isalpha(c) != 0 ? 1 : 0;
+#include "main.h"
+
+/**
+ * _isalpha - Checks for alphabetic character
+ * @c: The character to be checked
+ * Return: 1 for alphabetic character or 0 for anything else
+ */
+
+int _isalpha(int c)
+{
+if ((c >= 65 && c <= 90) || (c >= 97 && c <= 122))
+{
+return (1);
 }
-
-int main() {
-    char ch = 'A';
-    int result = _isalpha(ch);
-    printf("%c is alphabetic: %d\n", ch, result);
-
-    ch = '4';
-    result = _isalpha(ch);
-    printf("%c is alphabetic: %d\n", ch, result);
-
-    return 0;
-
+return (0);
+}
