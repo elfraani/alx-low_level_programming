@@ -1,6 +1,7 @@
 #include <stdio.h>
 
-int print_sign(int n) {
+int main() {
+    int print_sign(int n) {
     if (n > 0) {
         printf("+\n");
         return 1;
@@ -11,4 +12,20 @@ int print_sign(int n) {
         printf("-\n");
         return -1;
     }
+}
+    int number = 5;
+    int sign = print_sign(number);
+    printf("Returned sign: %d\n", sign);
+
+    number = 0;
+    sign = print_sign(number);
+    printf("Returned sign: %d\n", sign);
+
+    number = -3;
+    sign = print_sign(number);
+    printf("Returned sign: %d\n", sign);
+
+    return 0;
+
+}
 }
