@@ -17,15 +17,6 @@ void print_type(unsigned int e_type, unsigned char *e_ident);
 void print_entry(unsigned long int e_entry, unsigned char *e_ident);
 void close_elf(int elf);
 
-
-
-
-
-
-
-
-
-
 /**
  * check_elf - Checks if a file is an ELF file.
  * @e_ident: A pointer to an array containing the ELF magic numbers.
@@ -140,8 +131,6 @@ void print_version(unsigned char *e_ident)
 	}
 }
 
-
-
 /**
  * print_osabi - Prints the OS/ABI of an ELF header.
  * @e_ident: A pointer to an array containing the ELF version.
@@ -197,8 +186,6 @@ void print_abi(unsigned char *e_ident)
 	       e_ident[EI_ABIVERSION]);
 }
 
-
-
 /**
  * print_type - Prints the type of an ELF header.
  * @e_type: The ELF type.
@@ -233,8 +220,6 @@ void print_type(unsigned int e_type, unsigned char *e_ident)
 	}
 }
 
-
-
 /**
  * print_entry - Prints the entry point of an ELF header.
  * @e_entry: The address of the ELF entry point.
@@ -258,8 +243,6 @@ void print_entry(unsigned long int e_entry, unsigned char *e_ident)
 		printf("%#lx\n", e_entry);
 }
 
-
-
 /**
  * close_elf - Closes an ELF file.
  * @elf: The file descriptor of the ELF file.
@@ -275,8 +258,6 @@ void close_elf(int elf)
 		exit(98);
 	}
 }
-
-
 
 /**
  * main - Displays the information contained in the
@@ -300,7 +281,6 @@ int main(int __attribute__((__unused__)) argc, char *argv[])
 		dprintf(STDERR_FILENO, "Error: Can't read file %s\n", argv[1]);
 		exit(98);
 	}
-
 	header = malloc(sizeof(Elf64_Ehdr));
 	if (header == NULL)
 	{
@@ -308,7 +288,6 @@ int main(int __attribute__((__unused__)) argc, char *argv[])
 		dprintf(STDERR_FILENO, "Error: Can't read file %s\n", argv[1]);
 		exit(98);
 	}
-
 	r = read(o, header, sizeof(Elf64_Ehdr));
 	if (r == -1)
 	{
@@ -317,7 +296,6 @@ int main(int __attribute__((__unused__)) argc, char *argv[])
 		dprintf(STDERR_FILENO, "Error: `%s`: No such file\n", argv[1]);
 		exit(98);
 	}
-
 
 	check_elf(header->e_ident);
 	printf("ELF Header:\n");
